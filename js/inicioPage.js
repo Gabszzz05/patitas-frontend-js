@@ -55,7 +55,7 @@ async function autenticar(){
 
         if(!response.ok){
             mostrarAlerta('ERROR: Ocurrió un problema en la autenticacion');
-            throw new Error('ERROR: ${response.statusText}');
+            throw new Error(`ERROR: ${response.statusText}`);
         }
 
         //Validar respuesta
@@ -64,13 +64,15 @@ async function autenticar(){
 
         if(result.code === '00'){
             localStorage.setItem('result', JSON.stringify(result));
-            window.location.replace('principal.html');
+            setTimeout(() => {
+                window.location.replace('principal.html');
+            }, 2000);
         }else{
             mostrarAlerta(result.msj); 
         }
 
     }catch(error){
         console.error('ERROR: Ocurrió un problema no identificado', error);
-        mostrarAlerta('ERROR: Ocurrió un problema en la autenticacion');
+        mostrarAlerta('ERROR: Ocurrió un problema no identificado');
     }
 }
