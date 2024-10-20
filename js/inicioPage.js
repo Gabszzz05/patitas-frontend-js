@@ -43,7 +43,7 @@ function ocultarAlerta(){
 }
 
 async function autenticar(){
-    const URL = 'http://localhost:8082/login/autenticar-async';
+    const URL = 'http://localhost:8082/login/autenticar-feign'; // //autenticar-async
     const data = {
         tipoDocumento: tipoDocumento.value,
         numeroDocumento: numeroDocumento.value,

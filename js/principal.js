@@ -30,7 +30,7 @@ function ocultarAlerta(){
 
 //Cierre Sesion
 async function logout(){
-    const URL = 'http://localhost:8082/login/logout-async';
+    const URL = 'http://localhost:8082/login/logout-feign'; //logout-async //logout-feign
 
     try{
         const response = await fetch(URL, {method: 'POST'});
